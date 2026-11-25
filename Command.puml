@@ -1,14 +1,18 @@
 @startuml Command
-' Action
 title Command
 hide members
 left to right direction
 
-class AberturaSemestre implements Tarefa
-class FechamentoSemestre implements Tarefa
+interface Comando
+class LigarLuminariaComando
+class DesligarLuminariaComando
+class ControleRemoto
+class Luminaria
 
-AberturaSemestre --> "1" Semestre
-FechamentoSemestre --> "1" Semestre
-Secretaria --> "0..*" Tarefa
+LigarLuminariaComando ..|> Comando
+DesligarLuminariaComando ..|> Comando
+LigarLuminariaComando --> "1" Luminaria
+DesligarLuminariaComando --> "1" Luminaria
+ControleRemoto --> "0..*" Comando
 
 @enduml
