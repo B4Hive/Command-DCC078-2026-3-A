@@ -1,0 +1,14 @@
+@startuml Command
+' Action
+title Command
+hide members
+left to right direction
+
+class AberturaSemestre implements Tarefa
+class FechamentoSemestre implements Tarefa
+
+AberturaSemestre --> "1" Semestre
+FechamentoSemestre --> "1" Semestre
+Secretaria --> "0..*" Tarefa
+
+@enduml
